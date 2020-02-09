@@ -1,0 +1,19 @@
+---
+# defaults file for jboss
+
+jboss_packages_state: present
+jboss_remove_packages: true
+jboss_enable_service: true
+jboss_enable_selinux: true
+jboss_copy_templates: true
+jboss_firewall_configure: true
+jboss_firewall_rules:
+  - service: ssh
+  - port: 3389
+jboss_users:
+  - user: devops
+    group: docker
+jboss_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

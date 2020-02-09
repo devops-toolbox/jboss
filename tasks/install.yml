@@ -1,0 +1,27 @@
+---
+# Install jboss packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ jboss_packages_remove }}"
+    state: absent
+  become: true
+  when: jboss_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ jboss_packages_repos }}"
+    state: "{{ jboss_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ jboss_packages_prereq }}"
+    state: "{{ jboss_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ jboss_packages_install }}"
+    state: "{{ jboss_packages_state }}"
+  become: true

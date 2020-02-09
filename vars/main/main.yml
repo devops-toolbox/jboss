@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+jboss_repos_create: "{{ _jboss_repos_create['all']
+  | union ( _jboss_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+jboss_repos_download: "{{ _jboss_repos_download['all']
+  | union ( _jboss_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+jboss_templates_copy: "{{ _jboss_templates_copy['all']
+  | union ( _jboss_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+jboss_services_enable: "{{ _jboss_services_enable['all']
+  | union ( _jboss_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+jboss_selinux_enable: "{{ _jboss_selinux_enable['all']
+  | union ( _jboss_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+jboss_packages_remove: "{{ _jboss_packages_remove['all']
+  | union ( _jboss_packages_remove[my_os]
+  | default([]) ) }}"
+jboss_packages_repos: "{{ _jboss_packages_repos['all']
+  | union ( _jboss_packages_repos[my_os]
+  | default([]) ) }}"
+jboss_packages_prereq: "{{ _jboss_packages_prereq['all']
+  | union ( _jboss_packages_prereq[my_os]
+  | default([]) ) }}"
+jboss_packages_install: "{{ _jboss_packages_install['all']
+  | union ( _jboss_packages_install[my_os]
+  | default([]) ) }}"

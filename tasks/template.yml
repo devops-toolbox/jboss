@@ -1,0 +1,10 @@
+---
+# Template configuration files for jboss
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ jboss_templates_copy }}"
+  when: jboss_copy_templates
