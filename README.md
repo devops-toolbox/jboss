@@ -8,10 +8,10 @@ jboss: Jboss
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.jboss](https://galaxy.ansible.com/devops-toolbox.jboss)
+[https://galaxy.ansible.com/devopstoolbox.jboss](https://galaxy.ansible.com/devopstoolbox.jboss)
 
 ```bash
-ansible-galaxy install devops-toolbox.jboss
+ansible-galaxy install devopstoolbox.jboss
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: jboss is configured
       import_role:
-        name: devops-toolbox.jboss
+        name: devopstoolbox.jboss
       vars:
         jboss_packages_state: present
         jboss_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
